@@ -1,34 +1,12 @@
-let toggleNavBarStatus = false;
+function toggleNavBar() {
+    let getNavBar = document.querySelector(".navBarLinks");
 
-const toggleNavBar = function() {
-    const getNavBarUL = document.querySelector(".navBarLinks ul")
-    const getNavBarToggle = document.querySelector(".navBarToggle")
-    const getNavBarLinks = document.querySelectorAll(".navBarLinks a")
-
-    if (toggleNavBarStatus === false) {
-        getNavBarUL.style.visibility = "visible";
-        getNavBarToggle.style.opacity = "0.5";
-
-        let arrayLength = getNavBarLinks.length;
-        for (let i = 0; i < arrayLength; i++) {
-            getNavBarLinks[i].style.visibility = "1";
-        }
-
-        toggleNavBarStatus = true;
+    if (getNavBar.style.visibility === "visible") {
+        getNavBar.style.visibility = "hidden";
+    } else {
+        getNavBar.style.visibility = "visible";
     }
-
-    else if (toggleNavBarStatus === true) {
-        getNavBarUL.style.visibility = "hidden";
-        getNavBarToggle.style.opacity = "1";
-
-        let arrayLength = getNavBarLinks.length;
-        for (let i = 0; i < arrayLength; i++) {
-            getNavBarLinks[i].style.visibility = "0";
-        }
-
-        toggleNavBarStatus = false;
-    };
-};
+}
 
 
 //The AlertButton
@@ -45,31 +23,68 @@ attachEventAlterBtn();
 
 
 //This is the color change code
-let toggleColorStatus = false;
+document.getElementsByClassName("colorBtn")[0].addEventListener("click", function(){
+    document.body.style.backgroundColor = "hsl(1, 99%, 99%)";
+    console.log("The background has changed to the main");
+    toggleNavBar();
+});
 
-const changeHomeBackgroundColor = document.getElementsByClassName("colorBtn")[0];
-    changeHomeBackgroundColor.addEventListener("click", function(){
-        document.body.classList.toggle("homeBackground");
-    });
+document.getElementsByClassName("colorBtn")[1].addEventListener("click", function(){
+    document.body.style.backgroundColor = "purple";
+    console.log("The background has changed to Purple");
+    toggleNavBar();
+});
 
-const changePurpleBackgroundColor = document.getElementsByClassName("colorBtn")[1];
-    changePurpleBackgroundColor.addEventListener("click", function(){
-        document.body.classList.toggle("purpleBackground");
-        document.style.background("purpleBackground"); 
-    });
+document.getElementsByClassName("colorBtn")[2].addEventListener("click", function(){
+    document.body.style.backgroundColor = "red";
+    console.log("The background has changed to Red")
+    toggleNavBar();
+});
 
-const changeRedBackgroundColor = document.getElementsByClassName("colorBtn")[2];
-    changeRedBackgroundColor.addEventListener("click", function(){
-        document.body.classList.toggle("redBackground");
-    });
+document.getElementsByClassName("colorBtn")[3].addEventListener("click", function(){
+    document.body.style.backgroundColor = "green";
+    console.log("The background has changed to Green")
+    toggleNavBar();
+});
 
-const changeGreenBackgroundColor = document.getElementsByClassName("colorBtn")[3];
-    changeGreenBackgroundColor.addEventListener("click", function(){
-        document.body.classList.toggle("greenBackground");
-    });
+document.getElementsByClassName("colorBtn")[4].addEventListener("click", function(){
+    document.body.style.backgroundColor = "yellow";
+    console.log("The background has changed to Yellow")
+    toggleNavBar();
+});
 
-const changeYellowBackgroundColor = document.getElementsByClassName("colorBtn")[4];
-    changeYellowBackgroundColor.addEventListener("click", function(){
-        document.body.classList.toggle("yellowBackground");
-    });
+//Hover color change
+document.getElementsByClassName("colorBtn")[0].addEventListener("mouseover", function(){
+    document.getElementsByClassName("colorBtn")[0].style.backgroundColor = "hsl(1, 99%, 99%)";
+});
+document.getElementsByClassName("colorBtn")[0].addEventListener("mouseout", function(){
+    document.getElementsByClassName("colorBtn")[0].style.backgroundColor = "#999";
+});
 
+document.getElementsByClassName("colorBtn")[1].addEventListener("mouseover", function(){
+    document.getElementsByClassName("colorBtn")[1].style.backgroundColor = "purple";
+});
+document.getElementsByClassName("colorBtn")[1].addEventListener("mouseout", function(){
+    document.getElementsByClassName("colorBtn")[1].style.backgroundColor = "#999";
+});
+
+document.getElementsByClassName("colorBtn")[2].addEventListener("mouseover", function(){
+    document.getElementsByClassName("colorBtn")[2].style.backgroundColor = "red";
+});
+document.getElementsByClassName("colorBtn")[2].addEventListener("mouseout", function(){
+    document.getElementsByClassName("colorBtn")[2].style.backgroundColor = "#999";
+});
+
+document.getElementsByClassName("colorBtn")[3].addEventListener("mouseover", function(){
+    document.getElementsByClassName("colorBtn")[3].style.backgroundColor = "green";
+});
+document.getElementsByClassName("colorBtn")[3].addEventListener("mouseout", function(){
+    document.getElementsByClassName("colorBtn")[3].style.backgroundColor = "#999";
+});
+
+document.getElementsByClassName("colorBtn")[4].addEventListener("mouseover", function(){
+    document.getElementsByClassName("colorBtn")[4].style.backgroundColor = "yellow";
+});
+document.getElementsByClassName("colorBtn")[4].addEventListener("mouseout", function(){
+    document.getElementsByClassName("colorBtn")[4].style.backgroundColor = "#999";
+});
